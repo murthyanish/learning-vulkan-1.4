@@ -1,0 +1,14 @@
+{
+  "version": 4,
+  "configurePresets": [
+    {
+      "name": "lesson-0",
+      "displayName": "Lesson 0 Preset",
+      "description": "Preset to use with the tutorial's lesson 0",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "SDL_X11_XSCRNSAVER": "OFF"
+      }
+    }
+  ]
+}
