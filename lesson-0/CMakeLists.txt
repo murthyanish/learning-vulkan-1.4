@@ -14,11 +14,5 @@ target_sources(lvulkan_0
 target_link_libraries(lvulkan_0
   PRIVATE
     vendor
-    Vulkan::Vulkan
-    ${CMAKE_DL_LIBS}
-    Threads::Threads
-    X11::X11
-    X11::Xxf86vm
-    X11::Xrandr
-    X11::Xi
+    lvulkan_libraries
 )
