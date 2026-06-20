@@ -13,6 +13,5 @@ target_sources(lvulkan_0
 # target link libraries
 target_link_libraries(lvulkan_0
   PRIVATE
-    vendor
     lvulkan_libraries
 )

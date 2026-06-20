@@ -7,16 +7,13 @@ project(learning-vulkan-1.4)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIGURATION>")
 
-# Option to switch between a system sdl library and a vendored SDL library
-option(LVULKAN_SDL_VENDORED "Use vendored SDL libraries" OFF)
-
-# This takes care of vendored libraries. Also has code to use library libs
-# instead if LVULKAN_<lib>_VENDORED is set to false.
-add_subdirectory(vendored)
 include(cmake/libraries.cmake)
 
-find_package(Vulkan REQUIRED)
-find_package(X11 REQUIRED)
-find_package(Threads REQUIRED)
 
-add_subdirectory(lesson-0)
+option(lvulkan_l0 "Build lesson 0" OFF)
+if(lvulkan_l0)
+  add_subdirectory(lesson-0)
+endif()
+
+option(lvulkan_hellotriangle "Build HelloTriangleApplication" ON)
+add_subdirectory(hellotriangle)

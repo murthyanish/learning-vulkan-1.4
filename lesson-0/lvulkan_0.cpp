@@ -1,6 +1,11 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_vulkan.h>
 
+#define GLM_FORCE_RADIANS
+#define GLM_FORCE_DEPTH_ZERO_TO_ONE
+#include <glm/vec4.hpp>
+#include <glm/mat4x4.hpp>
+
 int main(void) {
   SDL_Log("%s", "Hello World!");
 
@@ -32,6 +37,12 @@ int main(void) {
 
   uint32_t sdl_extension_count;
   const char* const* sdl_extension_names = SDL_Vulkan_GetInstanceExtensions(&sdl_extension_count);
+
+  SDL_Log("%d  extensions supported\n", sdl_extension_count);
+
+  glm::mat4 matrix;
+  glm::vec4 vec;
+  auto test = matrix * vec;
 
   SDL_Event e;
   bool bQuit = false;
