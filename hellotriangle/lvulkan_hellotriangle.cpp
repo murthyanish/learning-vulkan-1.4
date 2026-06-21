@@ -1,3 +1,4 @@
+#include <SDL3/SDL_log.h>
 #include <SDL3/SDL_vulkan.h>
 
 #include <iostream>
@@ -7,6 +8,7 @@
 class HelloTriangleApplication {
 public:
     void run() {
+        throw std::runtime_error("Testing errors.");
         initVulkan();
         mainLoop();
         cleanup();
@@ -32,7 +34,7 @@ int main() {
     try {
         app.run();
     } catch (const std::exception& e) {
-        std::cerr << e.what() << std::endl;
+        SDL_LogError(0, "%s", e.what());
         return EXIT_FAILURE;
     }
 
