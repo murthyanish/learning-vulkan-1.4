@@ -1,9 +1,10 @@
 #include <SDL3/SDL_log.h>
 #include <SDL3/SDL_vulkan.h>
 
-#include <iostream>
 #include <stdexcept>
 #include <cstdlib>
+
+import std;
 
 class HelloTriangleApplication {
 public:
@@ -30,6 +31,7 @@ private:
 
 int main() {
     HelloTriangleApplication app;
+    std::cout << "Hello modular world\n";
 
     try {
         app.run();

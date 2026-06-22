@@ -5,9 +5,30 @@
       "name": "lesson-0",
       "displayName": "Lesson 0 Preset",
       "description": "Preset to use with the tutorial's lesson 0",
+      "generator": "Ninja",
       "binaryDir": "${sourceDir}/build",
       "cacheVariables": {
-        "SDL_X11_XSCRNSAVER": "OFF"
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "LVULKAN_SDL_VENDORED": "OFF",
+        "SDL_X11_XSCRNSAVER": "OFF",
+        "LVULKAN_L0": "ON",
+        "LVULKAN_HELLOTRIANGLE": "OFF"
+      }
+    },
+    {
+      "name": "hellotriangle",
+      "displayName": "Hellotriangle Preset",
+      "description": "Preset to use with the tutorial's hellotriangle application",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++",
+        "LVULKAN_SDL_VENDORED": "OFF",
+        "SDL_X11_XSCRNSAVER": "OFF",
+        "LVULKAN_L0": "OFF",
+        "LVULKAN_HELLOTRIANGLE": "ON"
       }
     }
   ]

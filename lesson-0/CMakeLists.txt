@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 4.3)
 project(lvulkan-lesson-0)
 
 add_executable(lvulkan_0)
-target_compile_features(lvulkan_0 PRIVATE cxx_std_17)
+target_compile_features(lvulkan_0 PRIVATE cxx_std_20)
 
 target_sources(lvulkan_0
   PRIVATE
