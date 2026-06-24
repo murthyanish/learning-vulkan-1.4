@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 4.3)
 
+include(FetchContent)
+
 find_package (glm REQUIRED)
 find_package (VulkanHpp 1.4.335 REQUIRED)      # Require Vulkan SDK version 1.4.335 or higher
-
 find_package (tinyobjloader REQUIRED)
 find_package (tinygltf REQUIRED)
 find_package (KTX REQUIRED)
-
-
 
 find_package(stb REQUIRED)
 set(STB_INCLUDEDIR ${stb_INCLUDE_DIRS})
