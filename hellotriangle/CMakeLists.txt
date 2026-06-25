@@ -26,3 +26,6 @@ target_link_libraries(lvulkan_hellotriangle
   PRIVATE
     lvulkan_libraries
 )
+target_include_directories (lvulkan_hellotriangle PRIVATE ${STB_INCLUDEDIR})
+# target_compile_definitions(${CHAPTER_NAME} PRIVATE USE_CPP23_MODULES=1)
+target_compile_definitions(lvulkan_hellotriangle PRIVATE "VULKAN_HPP_HANDLE_ERROR_OUT_OF_DATE_AS_SUCCESS" )

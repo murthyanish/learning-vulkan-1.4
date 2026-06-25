@@ -9,7 +9,7 @@ cmake_minimum_required(VERSION 4.3)
 # Add option to enable/disable C++ 23 module
 option(ENABLE_CPP23_MODULE "Enable C++ 23 module support for Vulkan" ON)
 
-# Enable C++ module dependency scanning only if C++ 20 module is enabled
+# Enable C++ module dependency scanning only if C++ 23 module is enabled
 if(ENABLE_CPP23_MODULE)
   set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "451f2fe2-a8a2-47c3-bc32-94786d8fc91b")
   # Explicitly tell CMake this target consumes standard library modules

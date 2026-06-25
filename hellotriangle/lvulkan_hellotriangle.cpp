@@ -1,10 +1,11 @@
 #include <SDL3/SDL_log.h>
-#include <SDL3/SDL_vulkan.h>
+// #include <SDL3/SDL_vulkan.h>
 
 #include <stdexcept>
 #include <cstdlib>
 
 import std;
+import vulkan;
 
 class HelloTriangleApplication {
 public:
