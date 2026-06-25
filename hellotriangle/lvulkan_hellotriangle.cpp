@@ -1,9 +1,6 @@
 #include <SDL3/SDL_log.h>
 // #include <SDL3/SDL_vulkan.h>
 
-#include <stdexcept>
-#include <cstdlib>
-
 import std;
 import vulkan;
 
@@ -38,8 +35,8 @@ int main() {
         app.run();
     } catch (const std::exception& e) {
         SDL_LogError(0, "%s", e.what());
-        return EXIT_FAILURE;
+        return 1;
     }
 
-    return EXIT_SUCCESS;
+    return 0;
 }
