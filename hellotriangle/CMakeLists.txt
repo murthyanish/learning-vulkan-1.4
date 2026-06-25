@@ -19,6 +19,10 @@ target_compile_features(lvulkan_hellotriangle PRIVATE cxx_std_23)
 target_sources(lvulkan_hellotriangle
   PRIVATE
     lvulkan_hellotriangle.cpp
+  PUBLIC
+    FILE_SET CXX_MODULES FILES
+      lsdl_resources.cppm
+      lvulkan_resources.cppm
 )
 
 # target link libraries
@@ -26,6 +30,9 @@ target_link_libraries(lvulkan_hellotriangle
   PRIVATE
     lvulkan_libraries
 )
-target_include_directories (lvulkan_hellotriangle PRIVATE ${STB_INCLUDEDIR})
+
+# target_include_directories (lvulkan_hellotriangle PRIVATE ${STB_INCLUDEDIR})
 # target_compile_definitions(${CHAPTER_NAME} PRIVATE USE_CPP23_MODULES=1)
-target_compile_definitions(lvulkan_hellotriangle PRIVATE "VULKAN_HPP_HANDLE_ERROR_OUT_OF_DATE_AS_SUCCESS" )
+target_compile_definitions(lvulkan_hellotriangle
+  PRIVATE
+    "VULKAN_HPP_HANDLE_ERROR_OUT_OF_DATE_AS_SUCCESS" )

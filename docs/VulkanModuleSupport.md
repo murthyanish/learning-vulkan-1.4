@@ -26,6 +26,7 @@ experimental std support. This is a problem when the Vulkan module (seemingly)
 needs the std module to be compiled.
 
 This required me adding the following code:
+
 ```
 # Enable C++ module dependency scanning only if C++ 23 module is enabled
 if(ENABLE_CPP23_MODULE)
@@ -70,3 +71,15 @@ C++ equivalent of the macros.
 The Khronos tutorial makes use of macros and doesn't give info on what the
 modern C++ version of these would be. I will have to look this up as I work
 through the tutorial.
+
+Some macro functions seem to be replaced with similarly named `vk::XXX` functions:
+
+```cpp
+vk::makeVersion(major, minor, patch); // Replaces VK_MAKE_VERSION()
+```
+
+## Other notes
+
+The tutorial uses module `vulkan_hpp`, but the library I am using seems to
+only export module `vulkan`. The actual symbols it exports seem to be the same
+so I'll continue using this.

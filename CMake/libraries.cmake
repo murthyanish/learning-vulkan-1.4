@@ -90,3 +90,5 @@ target_link_libraries(lvulkan_libraries
     lvulkan_vendored
     glm::glm
 )
+
+target_include_directories (lvulkan_libraries INTERFACE ${STB_INCLUDEDIR})
