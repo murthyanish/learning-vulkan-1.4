@@ -6,7 +6,7 @@ set(CMAKE_CXX_MODULE_STD ON)
 # Tell CMake to scan source files for module dependency mapping
 set(CMAKE_CXX_SCAN_FOR_MODULES ON)
 
-project(lvulkan_hellotriangle CXX)
+project(lvulkan_hellotriangle)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED YES)

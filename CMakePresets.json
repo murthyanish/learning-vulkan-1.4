@@ -10,6 +10,7 @@
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++",
+        "ENABLE_CPP23_MODULE": "ON",
         "LVULKAN_SDL_VENDORED": "OFF",
         "SDL_X11_XSCRNSAVER": "OFF",
         "LVULKAN_L0": "ON",
@@ -25,6 +26,7 @@
       "cacheVariables": {
         "CMAKE_C_COMPILER": "clang",
         "CMAKE_CXX_COMPILER": "clang++",
+        "ENABLE_CPP23_MODULE": "ON",
         "LVULKAN_SDL_VENDORED": "OFF",
         "SDL_X11_XSCRNSAVER": "OFF",
         "LVULKAN_L0": "OFF",
