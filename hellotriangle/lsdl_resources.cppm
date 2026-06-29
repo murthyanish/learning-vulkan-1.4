@@ -14,7 +14,10 @@ public:
       throw std::runtime_error(std::string("SDL_InitSubSystem failed: ") +
                                SDL_GetError());
     }
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION,
+                "SDL Video Subsystem initialized!");
   }
+
   ~LSDLSubsystem() { SDL_QuitSubSystem(flags); }
 
   LSDLSubsystem(const LSDLSubsystem &) = delete;
@@ -27,6 +30,7 @@ private:
 export struct LSDLWindow {
 public:
   explicit LSDLWindow(
+      LSDLSubsystem &sdlVideo, // To enforce dependency
       std::string_view title, int width, int height,
       SDL_WindowFlags flags = (SDL_WindowFlags)(SDL_WINDOW_VULKAN)) {
     // create blank SDL window for our application
@@ -38,10 +42,13 @@ public:
       throw std::runtime_error(std::string("SDL_CreateWindow failed: ") +
                                SDL_GetError());
     }
+
+    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "SDL Window created!");
   }
+
   ~LSDLWindow() { SDL_DestroyWindow(window); }
 
-  const SDL_Window* get() { return window; }
+  const SDL_Window *get() { return window; }
 
   LSDLWindow(const LSDLWindow &) = delete;
   LSDLWindow &operator=(const LSDLWindow &) = delete;
