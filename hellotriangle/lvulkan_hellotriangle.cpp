@@ -7,7 +7,9 @@
 import std;
 import vulkan;
 import lsdl_resources;
-import lvulkan_resources;
+import lvk_instance;
+
+namespace LVulkan {
 
 // Debug logging
 #ifdef NDEBUG
@@ -27,16 +29,16 @@ class HelloTriangleApplication {
   // SDL window
   LSDLWindow sdlWindow;
   // Vulkan context and instance
-  LSDLVulkanInstance sdlVulkanInstance;
+  LSDLVkInstance sdlVkInstance;
   // Vulkan debug message stuff
-  LVulkanDebugMessenger vulkanDebugMessenger;
+  LVkDebugMessenger vkDebugMessenger;
 
 public:
   HelloTriangleApplication()
       : sdlVideo(SDL_INIT_VIDEO),
         sdlWindow(sdlVideo, "HelloTriangle", 1280, 720),
-        sdlVulkanInstance(sdlVideo, sdlWindow, "HelloTriangle"),
-        vulkanDebugMessenger(sdlVulkanInstance) {
+        sdlVkInstance(sdlVideo, sdlWindow, "HelloTriangle"),
+        vkDebugMessenger(sdlVkInstance) {
     // Each hint describes when it should be set, this one should be set before
     // SDL is initialized.
     SDL_SetHint(SDL_HINT_APP_NAME, "HelloTriangleApplication");
@@ -63,9 +65,11 @@ private:
   }
 };
 
+} // namespace LVulkan
+
 int main() {
   try {
-    HelloTriangleApplication app;
+    LVulkan::HelloTriangleApplication app;
     app.run();
   } catch (const std::exception &e) {
     SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s", e.what());

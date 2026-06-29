@@ -9,11 +9,13 @@ module;
 // macros exist which cannot be replicated with any native C++ functionality.
 #include <vulkan/vk_platform.h>
 
-export module lvulkan_resources;
+export module lvk_instance;
 
 import vulkan;
 import std;
 import lsdl_resources;
+
+namespace LVulkan {
 
 // Validation Layers
 #ifdef NDEBUG
@@ -26,12 +28,12 @@ constexpr bool enableValidationLayers = true;
 const std::vector<char const *> validationLayers = {
     "VK_LAYER_KHRONOS_validation"};
 
-export struct LSDLVulkanInstance {
+export struct LSDLVkInstance {
 public:
-  explicit LSDLVulkanInstance(LSDLSubsystem &sdlVideo, // To enforce dependency
-                              LSDLWindow &sdlWindow,   // To enforce dependency
-                              std::string_view application_name,
-                              bool enable_validation_layers = false)
+  explicit LSDLVkInstance(LSDLSubsystem &sdlVideo, // To enforce dependency
+                          LSDLWindow &sdlWindow,   // To enforce dependency
+                          std::string_view application_name,
+                          bool enable_validation_layers = false)
       : context() {
     vk::ApplicationInfo appInfo{.pApplicationName = application_name.data(),
                                 .applicationVersion = vk::makeVersion(1, 0, 0),
@@ -96,10 +98,10 @@ public:
   const vk::raii::Instance &get() { return instance; }
   const vk::raii::Context &getContext() { return context; }
 
-  ~LSDLVulkanInstance() = default;
+  ~LSDLVkInstance() = default;
 
-  LSDLVulkanInstance(const LSDLVulkanInstance &) = delete;
-  LSDLVulkanInstance &operator=(const LSDLVulkanInstance &) = delete;
+  LSDLVkInstance(const LSDLVkInstance &) = delete;
+  LSDLVkInstance &operator=(const LSDLVkInstance &) = delete;
 
 private:
   vk::raii::Context context;
@@ -135,6 +137,9 @@ static VKAPI_ATTR vk::Bool32 VKAPI_CALL debugCallback(
     void *                                         pUserData) {
   // clang-format on
 
+  // The Khronos Vulkan tutorial doesn't use `vk::to_string` for some reason,
+  // I only found out this existed later, and it seems super useful, so I used
+  // this instead of the `std::to_string` call that the tutorial uses.
   switch (severity) {
   case vk::DebugUtilsMessageSeverityFlagBitsEXT::eVerbose:
   case vk::DebugUtilsMessageSeverityFlagBitsEXT::eInfo:
@@ -152,9 +157,9 @@ static VKAPI_ATTR vk::Bool32 VKAPI_CALL debugCallback(
   return vk::False;
 }
 
-export struct LVulkanDebugMessenger {
+export struct LVkDebugMessenger {
 public:
-  explicit LVulkanDebugMessenger(LSDLVulkanInstance &instance) {
+  explicit LVkDebugMessenger(LSDLVkInstance &instance) {
     if (!enableValidationLayers)
       return;
 
@@ -176,11 +181,13 @@ public:
         debugUtilsMessengerCreateInfoEXT);
   };
 
-  ~LVulkanDebugMessenger() = default;
+  ~LVkDebugMessenger() = default;
 
-  LVulkanDebugMessenger(const LVulkanDebugMessenger &) = delete;
-  LVulkanDebugMessenger &operator=(const LVulkanDebugMessenger &) = delete;
+  LVkDebugMessenger(const LVkDebugMessenger &) = delete;
+  LVkDebugMessenger &operator=(const LVkDebugMessenger &) = delete;
 
 private:
   vk::raii::DebugUtilsMessengerEXT debugMessenger = nullptr;
 };
+
+} // namespace LVulkan

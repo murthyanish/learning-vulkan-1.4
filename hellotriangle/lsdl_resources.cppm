@@ -7,6 +7,8 @@ export module lsdl_resources;
 
 import std;
 
+namespace LVulkan {
+
 export struct LSDLSubsystem {
 public:
   explicit LSDLSubsystem(SDL_InitFlags flags) : flags(flags) {
@@ -56,3 +58,5 @@ public:
 private:
   SDL_Window *window;
 };
+
+} // namespace LVulkan
