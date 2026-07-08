@@ -9,7 +9,7 @@ module;
 // macros exist which cannot be replicated with any native C++ functionality.
 #include <vulkan/vk_platform.h>
 
-export module lvk_instance;
+export module lsdl_vk_instance;
 
 import vulkan;
 import std;
@@ -27,6 +27,8 @@ constexpr bool enableValidationLayers = true;
 
 const std::vector<char const *> validationLayers = {
     "VK_LAYER_KHRONOS_validation"};
+
+#pragma region SDLVkInstance
 
 export struct LSDLVkInstance {
 public:
@@ -127,6 +129,10 @@ private:
   }
 };
 
+#pragma endregion
+
+#pragma region VkDebugMessenger
+
 // I have no idea why my editor wants to format this function weirdly. I added
 // the below to force it to stop messing with my formatting.
 // clang-format off
@@ -189,5 +195,7 @@ public:
 private:
   vk::raii::DebugUtilsMessengerEXT debugMessenger = nullptr;
 };
+
+#pragma endregion
 
 } // namespace LVulkan

@@ -7,7 +7,7 @@
 import std;
 import vulkan;
 import lsdl_resources;
-import lvk_instance;
+import lsdl_vk_instance;
 
 namespace LVulkan {
 

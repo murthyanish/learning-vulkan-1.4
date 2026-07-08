@@ -22,7 +22,7 @@ target_sources(lvulkan_hellotriangle
   PUBLIC
     FILE_SET CXX_MODULES FILES
       lsdl_resources.cppm
-      lvk_instance.cppm
+      lsdl_vk_instance.cppm
 )
 
 # target link libraries
