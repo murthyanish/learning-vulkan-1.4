@@ -19,12 +19,13 @@ eventually be worth it.
 I elected to use clang++ and CMake since this is the combination that is most
 recommended.
 
-> [+Note] The Vulkan module and C++ support are separate from the main C
-> implementation of Vulkan. As a result, the official Vulkan documentation
-> does not make any mention of the Hpp specific terminology or naming.
-> I only found out about this later, so many of my early notes here were made
-> with the assumption that Vulkan just had bad documentation for everything
-> related to Hpp. Which it does, since it doesn't even bother with it.
+> [!Note]
+> The Vulkan module and C++ support are separate from the main C implementation
+> of Vulkan. As a result, the official Vulkan documentation does not make any
+> mention of the Hpp specific terminology or naming. I only found out about
+> this later, so many of my early notes here were made with the assumption that
+> Vulkan just had bad documentation for everything related to Hpp. Which it
+> does, since it doesn't even bother with it.
 
 ## Modules with CMake
 
@@ -61,15 +62,13 @@ in the tutorial.
 
 ### Building the Vulkan Module
 
-Vulkan-Hpp provides instructions on how to create the module. I only found out
-about this long after I finished working on the CMake setup. I might still
-look into using this, but for now the project uses the hacked together setup I
-made earlier.
+Vulkan-Hpp provides instructions on how to create the module. I was not able to
+get this to work, so I am using my own build for this.
 
 Reference:
 Vulkan-Hpp module setup: <https://github.com/KhronosGroup/Vulkan-Hpp/blob/main/docs/Usage.md#c20-named-module>
 
-> [+Note] The below info is outdated, skip to the end of this section
+> [!Note] The below info is outdated, skip to the end of this section
 >
 > The Vulkan module requires module `std`. This is a feature that is only
 > supported by C++23. Because of this, I had to switch the standard of the

@@ -35,7 +35,11 @@ private:
 ```
 
 Here, I use flags as a private member because we want to maintain the value of
-flags, else we might destroy
+flags, else we might destroy.
+
+> [!NOTE]
+> I've decided to use `struct` instead of `class` for RAII objects to make it
+> easier to differentiate between these and old style classes for me.
 
 ## Using RAII for init in class
 
@@ -45,6 +49,45 @@ them in order in the class definition. When being destroyed, the class will
 always destroy resources in the inverse order that they are init.
 
 Not the most readable, but it works.
+
+### Enforcing dependencies
+
+When initializing classes, to ensure that all the resources are correctly
+ordered, we can add resources as required arguments to the subclasses or
+functions used in the constructor.
+
+```cpp
+explicit LSDLVkInstance(LSDLSubsystem &sdlVideo, // To enforce dependency
+                          LSDLWindow &sdlWindow,   // To enforce dependency
+                          std::string_view application_name,
+                          bool enable_validation_layers = false)
+      : context(),
+        instance(...) {
+  ...
+}
+```
+
+### Prevent unintended initializations
+
+Older style code typically sets its data members to `nullptr` or similar. This
+leads to resources being initialized unintentionally, and then modifying the
+value instead of directly initializing the resource on object creation.
+
+To prevent this, it is advised to move initialization logic to static functions,
+and have the constructor initialization list call the functions as the required
+arguments for the data members.
+
+```cpp
+LVkRenderDevice(LSDLVkInstance &instance)
+    : physicalDevice(selectPhysicalDevice(instance)) {
+  ...
+}
+
+static vk::raii::PhysicalDevice &selectPhysicalDevice(
+    LSDLVkInstance &instance) {
+  ...
+}
+```
 
 ## Notes
 

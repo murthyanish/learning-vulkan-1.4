@@ -8,6 +8,7 @@ import std;
 import vulkan;
 import lsdl_resources;
 import lsdl_vk_instance;
+// import lvk_render_device;
 
 namespace LVulkan {
 
@@ -32,13 +33,19 @@ class HelloTriangleApplication {
   LSDLVkInstance sdlVkInstance;
   // Vulkan debug message stuff
   LVkDebugMessenger vkDebugMessenger;
+  // Vulkan render device. Has physical device query functionality too.
+  // LVkRenderDevice vkRenderDevice;
 
 public:
+  // clang-format off
   HelloTriangleApplication()
       : sdlVideo(SDL_INIT_VIDEO),
         sdlWindow(sdlVideo, "HelloTriangle", 1280, 720),
         sdlVkInstance(sdlVideo, sdlWindow, "HelloTriangle"),
-        vkDebugMessenger(sdlVkInstance) {
+        vkDebugMessenger(sdlVkInstance) {//},
+        // vkRenderDevice(sdlVkInstance) {
+    // clang-format on
+
     // Each hint describes when it should be set, this one should be set before
     // SDL is initialized.
     SDL_SetHint(SDL_HINT_APP_NAME, "HelloTriangleApplication");

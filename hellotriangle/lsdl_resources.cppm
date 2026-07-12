@@ -50,7 +50,7 @@ public:
 
   ~LSDLWindow() { SDL_DestroyWindow(window); }
 
-  const SDL_Window *get() { return window; }
+  const SDL_Window *get() const { return window; }
 
   LSDLWindow(const LSDLWindow &) = delete;
   LSDLWindow &operator=(const LSDLWindow &) = delete;

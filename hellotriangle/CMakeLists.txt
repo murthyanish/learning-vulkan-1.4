@@ -23,6 +23,10 @@ target_sources(lvulkan_hellotriangle
     FILE_SET CXX_MODULES FILES
       lsdl_resources.cppm
       lsdl_vk_instance.cppm
+      lsdl_vk_instance-validation.cppm
+      lsdl_vk_instance-instance.cppm
+      lsdl_vk_instance-debug_messenger.cppm
+      # lvk_render_device.cppm
 )
 
 # target link libraries
