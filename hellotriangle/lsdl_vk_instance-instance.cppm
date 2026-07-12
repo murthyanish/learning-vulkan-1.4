@@ -102,6 +102,10 @@ private:
                : std::vector<const char *>{};
   }
 
+  /// @brief Make an ApplicationInfo struct.
+  ///
+  /// @param application_name Application/Game name
+  /// @return ApplicationInfo struct.
   static vk::ApplicationInfo
   makeApplicationInfo(std::string_view application_name) {
     return vk::ApplicationInfo{.pApplicationName = application_name.data(),
@@ -114,13 +118,16 @@ private:
   /// @brief Create the Instace Create Info for RAII init in constructor.
   ///
   /// @param context Vulkan Context
+  /// @param appInfo ApplicationInfo struct
   /// @param application_name Name of the game
   /// @param extensions List of extensions
   /// @param layers List of Vulkan layers
   /// @return Create info for Vulkan Instance.
-  static vk::InstanceCreateInfo makeInstanceCreateInfo(
-      vk::raii::Context &context, const vk::ApplicationInfo &appInfo,
-      std::vector<const char *> extensions, std::vector<const char *> layers) {
+  static vk::InstanceCreateInfo
+  makeInstanceCreateInfo(vk::raii::Context &context,
+                         const vk::ApplicationInfo &appInfo,
+                         const std::vector<const char *> &extensions,
+                         const std::vector<const char *> &layers) {
 
     // Check if the required SDL extensions are supported by the Vulkan
     // implementation.
