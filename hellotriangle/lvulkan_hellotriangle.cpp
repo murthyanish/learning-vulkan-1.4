@@ -19,7 +19,7 @@ constexpr bool enableVerboseLogging = false;
 constexpr bool enableVerboseLogging = true;
 #endif
 
-class HelloTriangleApplication {
+class RenderingAlkove {
   /// Resources
   // NOTE: members are declared in initialization order.
   // Destruction will occur in reverse order. Do not modify the order unless
@@ -38,7 +38,7 @@ class HelloTriangleApplication {
 
 public:
   // clang-format off
-  HelloTriangleApplication()
+  RenderingAlkove()
       : sdlVideo(SDL_INIT_VIDEO),
         sdlWindow(sdlVideo, "HelloTriangle", 1280, 720),
         sdlVkInstance(sdlVideo, sdlWindow, "HelloTriangle"),
@@ -76,7 +76,7 @@ private:
 
 int main() {
   try {
-    LVulkan::HelloTriangleApplication app;
+    LVulkan::RenderingAlkove app;
     app.run();
   } catch (const std::exception &e) {
     SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "%s", e.what());

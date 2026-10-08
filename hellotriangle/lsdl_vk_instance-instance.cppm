@@ -7,8 +7,6 @@ module;
 
 export module lsdl_vk_instance:instance;
 
-import :validation;
-
 import vulkan;
 import std;
 import lsdl_resources;

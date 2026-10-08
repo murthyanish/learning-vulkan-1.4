@@ -2,6 +2,7 @@ module;
 
 export module lvk_render_device;
 
+import std;
 import vulkan;
 import lsdl_vk_instance;
 
@@ -23,8 +24,7 @@ private:
   vk::raii::PhysicalDevice physicalDevice;
   // vk::raii::Device device;
 
-  static vk::raii::PhysicalDevice &
-  selectPhysicalDevice(LSDLVkInstance &instance) {
+  vk::raii::PhysicalDevice &selectPhysicalDevice(LSDLVkInstance &instance) {
     auto physicalDevices = instance.getPhysicalDevices();
     if (physicalDevices.empty()) {
       throw std::runtime_error("Failed to find GPUs with Vulkan support!");
@@ -41,6 +41,7 @@ private:
 
     return physicalDevice;
   }
+
   int scorePhysicalDevice(const vk::raii::PhysicalDevice &pDevice) {
     auto deviceProperties = pDevice.getProperties();
     auto deviceFeatures = pDevice.getFeatures();

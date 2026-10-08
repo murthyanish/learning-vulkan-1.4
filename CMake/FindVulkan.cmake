@@ -223,6 +223,10 @@ environment.
 cmake_policy(PUSH)
 cmake_policy(SET CMP0057 NEW)
 
+if(NOT DEFINED ENV{VULKAN_SDK})
+  message(FATAL_ERROR "VULKAN_SDK not set — source setup-env.sh")
+endif()
+
 # Provide compatibility with a common invalid component request that
 # was silently ignored prior to CMake 3.24.
 if("FATAL_ERROR" IN_LIST Vulkan_FIND_COMPONENTS)

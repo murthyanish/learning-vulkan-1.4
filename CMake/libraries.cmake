@@ -54,13 +54,6 @@ if(ENABLE_CPP23_MODULE)
           FILES
           "${Vulkan_INCLUDE_DIR}/vulkan/vulkan.cppm"
   )
-
-
-  # Add the vulkan.cppm file directly as a source file
-  target_sources(VulkanCppModule
-          PRIVATE
-          "${Vulkan_INCLUDE_DIR}/vulkan/vulkan.cppm"
-  )
 else()
   # Create a dummy interface library when C++ 20 module is disabled
   add_library(VulkanCppModule INTERFACE)

@@ -11,7 +11,6 @@ export module lsdl_vk_instance:debug_messenger;
 import vulkan;
 import std;
 import :instance;
-import :validation;
 
 namespace LVulkan {
 

@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 4.3)
 
+set(CMAKE_CXX_STANDARD 23)
+
 ### Setting up module support
 # I'm using 23 instead of 20 because module std is only supported in 23.
 #
@@ -11,11 +13,7 @@ option(ENABLE_CPP23_MODULE "Enable C++ 23 module support for Vulkan" ON)
 
 # Enable C++ module dependency scanning only if C++ 23 module is enabled
 if(ENABLE_CPP23_MODULE)
-  set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "451f2fe2-a8a2-47c3-bc32-94786d8fc91b")
-  # Explicitly tell CMake this target consumes standard library modules
-  set(CMAKE_CXX_MODULE_STD ON)
-  # Tell CMake to scan source files for module dependency mapping
-  set(CMAKE_CXX_SCAN_FOR_MODULES ON)
+  set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "f35a9ac6-8463-4d38-8eec-5d6008153e7d")
 endif()
 
 project(learning-vulkan-1.4)
@@ -35,13 +33,13 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/CMake")
 include(CMake/libraries.cmake)
 # include(CMake/project_utilities.cmake)
 
-### A test cpp built from the old vulkan-tutorial code.
-option(LVULKAN_L0 "Build lesson 0" OFF)
-if(LVULKAN_L0)
-  add_subdirectory(lesson-0)
-endif()
+# ### A test cpp built from the old vulkan-tutorial code.
+# option(LVULKAN_L0 "Build lesson 0" OFF)
+# if(LVULKAN_L0)
+#   add_subdirectory(lesson-0)
+# endif()
 
-option(LVULKAN_HELLOTRIANGLE "Build HelloTriangleApplication" ON)
-if(LVULKAN_HELLOTRIANGLE)
+# option(LVULKAN_HELLOTRIANGLE "Build HelloTriangleApplication" ON)
+# if(LVULKAN_HELLOTRIANGLE)
   add_subdirectory(hellotriangle)
-endif()
+# endif()

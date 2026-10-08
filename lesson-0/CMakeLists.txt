@@ -4,6 +4,7 @@ project(lvulkan-lesson-0)
 
 add_executable(lvulkan_0)
 target_compile_features(lvulkan_0 PRIVATE cxx_std_20)
+set_target_properties(lvulkan_0 PROPERTIES CXX_MODULE_STD ON)
 
 target_sources(lvulkan_0
   PRIVATE
