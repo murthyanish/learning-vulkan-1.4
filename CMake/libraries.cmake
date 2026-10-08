@@ -29,8 +29,6 @@ if(ENABLE_CPP23_MODULE)
   )
 
   set_target_properties(VulkanCppModule PROPERTIES
-    CXX_STANDARD 23
-    CXX_STANDARD_REQUIRED YES
     CXX_MODULE_STD ON
   )
 

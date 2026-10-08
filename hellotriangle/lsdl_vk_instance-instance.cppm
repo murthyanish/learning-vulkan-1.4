@@ -1,10 +1,5 @@
 module;
-
-#include <SDL3/SDL_log.h>
-#include <SDL3/SDL_stdinc.h>
-#include <SDL3/SDL_vulkan.h>
 #include <string_view>
-
 export module lsdl_vk_instance:instance;
 
 import vulkan;
@@ -41,19 +36,10 @@ public:
   explicit LSDLVkInstance(LSDLSubsystem &sdlVideo, // To enforce dependency
                           LSDLWindow &sdlWindow,   // To enforce dependency
                           std::string_view application_name,
-                          bool enable_validation_layers = false)
-      : context(),
-        instance(context,
-                 makeInstanceCreateInfo(
-                     context, makeApplicationInfo(application_name),
-                     getRequiredInstanceExtensions(), getRequiredLayers())) {
-    SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Vulkan Instance created!");
-  }
+                          bool enable_validation_layers = false);
 
   [[nodiscard]] std::vector<vk::raii::PhysicalDevice>
-  getPhysicalDevices() const {
-    return instance.enumeratePhysicalDevices();
-  }
+  getPhysicalDevices() const;
 
   const vk::raii::Instance &get() const { return instance; }
   const vk::raii::Context &getContext() const { return context; }
@@ -71,47 +57,19 @@ private:
   /// @brief Get the required extensions from SDL.
   ///
   /// @return Vector of Vulkan extension names.
-  static std::vector<const char *> getRequiredInstanceExtensions() {
-    uint32_t extensionCount = 0;
-    const char *const *sdlExtensions =
-        SDL_Vulkan_GetInstanceExtensions(&extensionCount);
-
-    if (sdlExtensions == NULL) {
-      throw std::runtime_error(
-          std::string("SDL_Vulkan_GetInstanceExtensions failed: ") +
-          SDL_GetError());
-    }
-
-    std::vector extensions(sdlExtensions, sdlExtensions + extensionCount);
-    if (enableValidationLayers) {
-      extensions.push_back(vk::EXTDebugUtilsExtensionName);
-    }
-
-    return extensions;
-  }
+  static std::vector<const char *> getRequiredInstanceExtensions();
 
   /// @brief Get the requires layers for the engine.
   ///
   /// @return Vector of layer names.
-  static std::vector<const char *> getRequiredLayers() {
-    return enableValidationLayers
-               ? std::vector<const char *>(validationLayers.begin(),
-                                           validationLayers.end())
-               : std::vector<const char *>{};
-  }
+  static std::vector<const char *> getRequiredLayers();
 
   /// @brief Make an ApplicationInfo struct.
   ///
   /// @param application_name Application/Game name
   /// @return ApplicationInfo struct.
   static vk::ApplicationInfo
-  makeApplicationInfo(std::string_view application_name) {
-    return vk::ApplicationInfo{.pApplicationName = application_name.data(),
-                               .applicationVersion = vk::makeVersion(1, 0, 0),
-                               .pEngineName = "No Engine",
-                               .engineVersion = vk::makeVersion(1, 0, 0),
-                               .apiVersion = vk::ApiVersion14};
-  }
+  makeApplicationInfo(std::string_view application_name);
 
   /// @brief Create the Instace Create Info for RAII init in constructor.
   ///
@@ -125,47 +83,7 @@ private:
   makeInstanceCreateInfo(vk::raii::Context &context,
                          const vk::ApplicationInfo &appInfo,
                          const std::vector<const char *> &extensions,
-                         const std::vector<const char *> &layers) {
-
-    // Check if the required SDL extensions are supported by the Vulkan
-    // implementation.
-    auto extensionProperties = context.enumerateInstanceExtensionProperties();
-    auto unsupportedPropertyIt = std::ranges::find_if(
-        extensions, [&extensionProperties](auto const &requiredExtension) {
-          return std::ranges::none_of(
-              extensionProperties,
-              [requiredExtension](auto const &extensionProperty) {
-                return std::string_view(extensionProperty.extensionName) ==
-                       requiredExtension;
-              });
-        });
-    if (unsupportedPropertyIt != extensions.end()) {
-      throw std::runtime_error("Required extension not supported: " +
-                               std::string(*unsupportedPropertyIt));
-    }
-
-    // Check if the required layers are supported by the Vulkan implementation.
-    auto layerProperties = context.enumerateInstanceLayerProperties();
-    auto unsupportedLayerIt = std::ranges::find_if(
-        layers, [&layerProperties](auto const &requiredLayer) {
-          return std::ranges::none_of(
-              layerProperties, [requiredLayer](auto const &layerProperty) {
-                return std::string_view(layerProperty.layerName) ==
-                       requiredLayer;
-              });
-        });
-    if (unsupportedLayerIt != layers.end()) {
-      throw std::runtime_error("Required layer not supported: " +
-                               std::string(*unsupportedLayerIt));
-    }
-
-    return vk::InstanceCreateInfo{
-        .pApplicationInfo = &appInfo,
-        .enabledLayerCount = static_cast<uint32_t>(layers.size()),
-        .ppEnabledLayerNames = layers.data(),
-        .enabledExtensionCount = static_cast<uint32_t>(extensions.size()),
-        .ppEnabledExtensionNames = extensions.data()};
-  }
+                         const std::vector<const char *> &layers);
 };
 
 } // namespace LVulkan

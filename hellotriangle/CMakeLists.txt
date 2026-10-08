@@ -2,10 +2,6 @@ cmake_minimum_required(VERSION 4.3)
 
 project(lvulkan_hellotriangle)
 
-set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_CXX_STANDARD_REQUIRED YES)
-set(CMAKE_CXX_EXTENSIONS ON)
-
 add_executable(lvulkan_hellotriangle)
 
 set_target_properties(lvulkan_hellotriangle PROPERTIES CXX_MODULE_STD ON)
@@ -15,6 +11,8 @@ target_compile_features(lvulkan_hellotriangle PRIVATE cxx_std_23)
 target_sources(lvulkan_hellotriangle
   PRIVATE
     lvulkan_hellotriangle.cpp
+    lsdl_vk_instance-instance.cpp
+    lsdl_vk_instance-debug_messenger.cpp
   PUBLIC
     FILE_SET CXX_MODULES FILES
       lsdl_resources.cppm

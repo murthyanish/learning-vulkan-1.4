@@ -1,0 +1,96 @@
+build/build.ninja:252:# Object build statements for INTERFACE_LIBRARY target @cmake_cxx_std@synth_0
+build/build.ninja:256:# Order-only phony target for @cmake_cxx_std@synth_0
+build/build.ninja:258:build cmake_object_order_depends_target_@cmake_cxx_std@synth_0
+build/build.ninja:260:build CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:261:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:262:  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:264:  OBJ_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:265:  PREPROCESSED_OUTPUT_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:267:build CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:269:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:270:  DYNDEP_MODULE_MAP_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:272:  OBJECT_DIR = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:273:  OBJECT_FILE_DIR = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:274:  TARGET_SUPPORT_DIR = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:275:  dyndep = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:277:build CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:278:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:279:  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:281:  OBJ_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:282:  PREPROCESSED_OUTPUT_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:284:build CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:286:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:287:  DYNDEP_MODULE_MAP_FILE = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:289:  OBJECT_DIR = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:290:  OBJECT_FILE_DIR = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:291:  TARGET_SUPPORT_DIR = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:292:  dyndep = CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:294:build CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:299:# Imported C++ module library @cmake_cxx_std@synth_0
+build/build.ninja:301:build @cmake_cxx_std@synth_0
+build/build.ninja:304:# Object build statements for INTERFACE_LIBRARY target @cmake_cxx_std@synth_1
+build/build.ninja:308:# Order-only phony target for @cmake_cxx_std@synth_1
+build/build.ninja:310:build cmake_object_order_depends_target_@cmake_cxx_std@synth_1
+build/build.ninja:312:build CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:313:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:314:  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:316:  OBJ_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:317:  PREPROCESSED_OUTPUT_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:319:build CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:321:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:322:  DYNDEP_MODULE_MAP_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:324:  OBJECT_DIR = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:325:  OBJECT_FILE_DIR = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:326:  TARGET_SUPPORT_DIR = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:327:  dyndep = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:329:build CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:330:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:331:  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:333:  OBJ_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:334:  PREPROCESSED_OUTPUT_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:336:build CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:338:  DEP_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:339:  DYNDEP_MODULE_MAP_FILE = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:341:  OBJECT_DIR = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:342:  OBJECT_FILE_DIR = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:343:  TARGET_SUPPORT_DIR = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:344:  dyndep = CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:346:build CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:351:# Imported C++ module library @cmake_cxx_std@synth_1
+build/build.ninja:353:build @cmake_cxx_std@synth_1
+build/build.ninja:50:build cmake_object_order_depends_target_VulkanCppModule: phony || @cmake_cxx_std@synth_0
+build/build.ninja:7068:build cmake_object_order_depends_target_lvulkan_hellotriangle: phony || @cmake_cxx_std@synth_1
+build/build.ninja:7196:build hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/CXX.dd | hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/CXXModules.json hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lvulkan_hellotriangle.cpp.o.modmap hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_resources.cppm.o.modmap hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance.cppm.o.modmap hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-validation.cppm.o.modmap hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-instance.cppm.o.modmap hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-debug_messenger.cppm.o.modmap: CXX_DYNDEP__lvulkan_hellotriangle_Debug hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lvulkan_hellotriangle.cpp.o.ddi hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_resources.cppm.o.ddi hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance.cppm.o.ddi hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-validation.cppm.o.ddi hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-instance.cppm.o.ddi hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-debug_messenger.cppm.o.ddi | /run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/CXXDependInfo.json CMakeFiles/@cmake_cxx_std@synth_1
+build/build.ninja:7206:build Debug/lvulkan_hellotriangle: CXX_EXECUTABLE_LINKER__lvulkan_hellotriangle_Debug hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lvulkan_hellotriangle.cpp.o hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_resources.cppm.o hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance.cppm.o hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-validation.cppm.o hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-instance.cppm.o hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/lsdl_vk_instance-debug_messenger.cppm.o | lib@cmake_cxx_std.a Debug/libVulkanCppModule.so /usr/lib/libvulkan.so Debug/libSDL3.so.0.5.0 _deps/sdl3-src/src/dynapi/SDL_dynapi.sym || @cmake_cxx_std@synth_1
+build/build.ninja:73:build CMakeFiles/VulkanCppModule.dir/CXX.dd | CMakeFiles/VulkanCppModule.dir/CXXModules.json CMakeFiles/VulkanCppModule.dir/home/alkove/portableDevEnv/vulkan/1.4.363.0/x86_64/include/vulkan/vulkan.cppm.o.modmap: CXX_DYNDEP__VulkanCppModule_Debug CMakeFiles/VulkanCppModule.dir/home/alkove/portableDevEnv/vulkan/1.4.363.0/x86_64/include/vulkan/vulkan.cppm.o.ddi | /run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/VulkanCppModule.dir/CXXDependInfo.json CMakeFiles/@cmake_cxx_std@synth_0
+build/build.ninja:83:build Debug/libVulkanCppModule.so: CXX_SHARED_LIBRARY_LINKER__VulkanCppModule_Debug CMakeFiles/VulkanCppModule.dir/home/alkove/portableDevEnv/vulkan/1.4.363.0/x86_64/include/vulkan/vulkan.cppm.o | /usr/lib/libvulkan.so lib@cmake_cxx_std.a || @cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/codemodel-v2-afb576c96b5aec9d5eb1.json:1288:					"id" : "@cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/codemodel-v2-afb576c96b5aec9d5eb1.json:1289:					"jsonFile" : "target-@cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/codemodel-v2-afb576c96b5aec9d5eb1.json:1290:					"name" : "@cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/codemodel-v2-afb576c96b5aec9d5eb1.json:1295:					"id" : "@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/codemodel-v2-afb576c96b5aec9d5eb1.json:1296:					"jsonFile" : "target-@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/codemodel-v2-afb576c96b5aec9d5eb1.json:1297:					"name" : "@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/target-@cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/target-@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/target-lvulkan_hellotriangle-Debug-c2473e107fec76d26760.json:111:			"id" : "@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/target-lvulkan_hellotriangle-Debug-c2473e107fec76d26760.json:207:			"id" : "@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/target-lvulkan_hellotriangle-Debug-c2473e107fec76d26760.json:318:			"id" : "@cmake_cxx_std@synth_1
+build/.cmake/api/v1/reply/target-VulkanCppModule-Debug-a804bf978d1f18e3facb.json:157:			"id" : "@cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/target-VulkanCppModule-Debug-a804bf978d1f18e3facb.json:228:			"id" : "@cmake_cxx_std@synth_0
+build/.cmake/api/v1/reply/target-VulkanCppModule-Debug-a804bf978d1f18e3facb.json:92:			"id" : "@cmake_cxx_std@synth_0
+build/CMakeFiles/rules.ninja:135:  command = /usr/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/@cmake_cxx_std@synth_0
+build/CMakeFiles/rules.ninja:175:  command = /usr/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/@cmake_cxx_std@synth_1
+build/CMakeFiles/VulkanCppModule.dir/CXXDependInfo.json:46:		"/run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/@cmake_cxx_std@synth_0
+build/CMakeFiles/VulkanCppModule.dir/CXXModules.json:15:			"path" : "CMakeFiles/@cmake_cxx_std@synth_0
+build/CMakeFiles/VulkanCppModule.dir/CXXModules.json:20:			"path" : "CMakeFiles/@cmake_cxx_std@synth_0
+build/compile_commands.json:22:  "command": "/usr/bin/clang++ -g -std=gnu++23 @CMakeFiles/@cmake_cxx_std@synth_0
+build/compile_commands.json:24:  "output": "/run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/@cmake_cxx_std@synth_0
+build/compile_commands.json:28:  "command": "/usr/bin/clang++ -g -std=gnu++23 @CMakeFiles/@cmake_cxx_std@synth_0
+build/compile_commands.json:30:  "output": "/run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/@cmake_cxx_std@synth_0
+build/compile_commands.json:34:  "command": "/usr/bin/clang++ -g -std=gnu++23 @CMakeFiles/@cmake_cxx_std@synth_1
+build/compile_commands.json:36:  "output": "/run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/@cmake_cxx_std@synth_1
+build/compile_commands.json:40:  "command": "/usr/bin/clang++ -g -std=gnu++23 @CMakeFiles/@cmake_cxx_std@synth_1
+build/compile_commands.json:42:  "output": "/run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/@cmake_cxx_std@synth_1
+build/hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/CXXDependInfo.json:178:		"/run/host/var/home/alkove/Documents/devenv/learning-vulkan-1.4/build/CMakeFiles/@cmake_cxx_std@synth_1
+build/hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/CXXModules.json:60:			"path" : "CMakeFiles/@cmake_cxx_std@synth_0
+build/hellotriangle/CMakeFiles/lvulkan_hellotriangle.dir/CXXModules.json:65:			"path" : "CMakeFiles/@cmake_cxx_std@synth_0

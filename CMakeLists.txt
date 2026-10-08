@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 4.3)
 
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 ### Setting up module support
 # I'm using 23 instead of 20 because module std is only supported in 23.
